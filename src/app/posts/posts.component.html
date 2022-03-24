@@ -1,0 +1,11 @@
+<hr>
+<p>posts works!</p>
+<input 
+    (keyup.enter)="createPost(title)" #title
+    type="text" class="form-control">
+    <h5>La liste<h5>
+<ul class="list-group">
+    <li *ngFor="let post of posts" class="list-group-item">
+        {{ post.title }}
+    </li>
+</ul>

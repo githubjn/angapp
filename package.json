@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/'",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ngh --dir=dist/angapp"
+    "build": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/'",
+    "deploy": "ngh --dir=dist/angapp",
+	 "deploy:gh": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/' && ngh --dir=dist/angapp"
   },
   "private": true,
   "dependencies": {
