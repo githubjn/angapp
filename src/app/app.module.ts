@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-//import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
@@ -12,6 +11,7 @@ import { PostsComponent } from './posts/posts.component';
 import { BooksComponent } from './books/books.component';
 import { TempoComponent } from './tempo/tempo.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,35 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-    // ,
-    // RouterModule.forRoot([
-    //   { 
-    //     path: '', 
-    //     component: TempoComponent
-    //   },
-    //   //{ path: 'courses/:name', component: CourseComponent}
-    //   { 
-    //     path: 'courses', 
-    //     component: CoursesComponent
-    //   },
-    //   { 
-    //     path: 'course', 
-    //     component: CourseComponent
-    //   },
-    //   { 
-    //     path: 'posts', 
-    //     component: PostsComponent
-    //   },
-    //   { 
-    //     path: 'books', 
-    //     component: BooksComponent
-    //   },
-    //   { 
-    //     path: '**', 
-    //     component: NotFoundComponent
-    //   }
-    // ])
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'course', component: CourseComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'books', component: BooksComponent },
+  { path: 'removedPage',   redirectTo: '/books', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 ];
 
