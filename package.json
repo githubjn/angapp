@@ -8,7 +8,7 @@
     "test": "ng test",
     "build": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/'",
     "deploy": "ngh --dir=dist/angapp",
-	 "deploy:gh": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/' && ngh --dir=dist/angapp"
+    "deploy:gh": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/' && ngh --dir=dist/angapp"
   },
   "private": true,
   "dependencies": {
@@ -17,9 +17,12 @@
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
     "@angular/forms": "~13.3.0",
+    "@angular/localize": "~13.3.0",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@ng-bootstrap/ng-bootstrap": "^12.0.1",
+    "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.1.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
