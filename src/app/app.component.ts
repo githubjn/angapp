@@ -19,6 +19,7 @@ export class AppComponent {
     this.router.events.pipe(
       filter((event: any) => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
+      console.log("TOTO",event.urlAfterRedirects);
       /** START : Code to Track Page View  */
        gtag('event', 'page_view', {
           page_path: event.urlAfterRedirects
