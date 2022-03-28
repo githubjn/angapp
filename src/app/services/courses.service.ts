@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 export class CoursesService {
 
   constructor() { }
+
   getCourses(){
     return ["Mathematics", "Physics", "Sport", "History"];
   }
+  
 }
