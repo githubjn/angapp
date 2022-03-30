@@ -13,16 +13,17 @@ import { GoogleAnalyticsService } from '../services/google-analytics.service';
 export class CoursesComponent implements OnInit {
 
   title = "List of courses";
-  courses;
+  courses: any;
   
   constructor(
     private service: CoursesService,
     public googleAnalyticsService: GoogleAnalyticsService
     ) { 
-    this.courses = service.getCourses();
-  }
+      }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void {
+    this.courses = this.service.getCourses();
+    }
 
   SendAddToCartEvent(){ 
     //....

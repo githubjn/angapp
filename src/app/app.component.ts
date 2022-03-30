@@ -14,7 +14,10 @@ export class AppComponent {
   title = 'angapp-to test deploy-JMC.';
 
 
-  constructor(private router: Router) {
+  constructor(
+              private router: Router
+//              ,private translateService: TranslateService
+              ) {
 
     this.router.events.pipe(
       filter((event: any) => event instanceof NavigationEnd)
@@ -25,7 +28,13 @@ export class AppComponent {
           page_path: event.urlAfterRedirects
        })
       /** END */
-    })
+    });
+
+    // this.translateService.setDefaultLang('en');
+    // this.translateService.use(localStorage.getItem('lang') || 'en' );
+
+    const lang = localStorage.getItem('lang') ||'en';
+    document.documentElement.lang = lang;
 
   }
 

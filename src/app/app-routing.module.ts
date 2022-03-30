@@ -6,6 +6,7 @@ import { TempoComponent } from './tempo/tempo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BooksComponent } from './books/books.component';
 import { PostsComponent } from './posts/posts.component';
+import { CountryComponent } from './country/country.component';
 
 const routes: Routes = [
   { path: '', component: TempoComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'course', component: CourseComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'books', component: BooksComponent },
+  { path: 'countries', component: CountryComponent },
   { path: 'removedPage',   redirectTo: '/books', pathMatch: 'full' }, // redirect to `first-component`
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 ];

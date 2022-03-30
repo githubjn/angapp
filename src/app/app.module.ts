@@ -1,7 +1,7 @@
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,15 @@ import { TempoComponent } from './tempo/tempo.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GoogleAnalyticsService } from './services/google-analytics.service';
+import { CountryComponent } from './country/country.component';
+import { LanguageInterceptor } from './interceptors/language.interceptor';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -22,16 +31,26 @@ import { GoogleAnalyticsService } from './services/google-analytics.service';
     PostsComponent,
     BooksComponent,
     TempoComponent,
-    NavbarComponent
+    NavbarComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   providers: [
-    GoogleAnalyticsService
+    GoogleAnalyticsService,
+    { provide: HTTP_INTERCEPTORS, useClass: LanguageInterceptor, multi: true },
+    HttpClient
   ],
   bootstrap: [AppComponent]
 })
