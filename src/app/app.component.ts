@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs/operators';
 
 declare const gtag: Function;
@@ -16,7 +17,7 @@ export class AppComponent {
 
   constructor(
               private router: Router
-//              ,private translateService: TranslateService
+             ,private translateService: TranslateService
               ) {
 
     this.router.events.pipe(
@@ -30,8 +31,8 @@ export class AppComponent {
       /** END */
     });
 
-    // this.translateService.setDefaultLang('en');
-    // this.translateService.use(localStorage.getItem('lang') || 'en' );
+    this.translateService.setDefaultLang('en');
+    this.translateService.use(localStorage.getItem('lang') || 'en' );
 
     const lang = localStorage.getItem('lang') ||'en';
     document.documentElement.lang = lang;

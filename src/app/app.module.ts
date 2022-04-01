@@ -16,8 +16,8 @@ import { GoogleAnalyticsService } from './services/google-analytics.service';
 import { CountryComponent } from './country/country.component';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http'; 
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
@@ -45,11 +45,15 @@ export function HttpLoaderFactory(http: HttpClient){
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  })
+    })
   ],
   providers: [
     GoogleAnalyticsService,
-    { provide: HTTP_INTERCEPTORS, useClass: LanguageInterceptor, multi: true },
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: LanguageInterceptor, 
+      multi: true 
+    },
     HttpClient
   ],
   bootstrap: [AppComponent]
