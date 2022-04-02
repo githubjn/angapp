@@ -1,23 +1,18 @@
-version: '3.9' # optional since v1.27.0
+version: "3"
 services:
-  docker-frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
+  dev:
+    container_name: dev
+    build: .
     ports:
-      - '4200:4200'
+      - "4200:4200"
+    environment:
+      SHELL: /bin/bash
+      NODE_ENV: development
     volumes:
-      - ./src:/frontend/src
-
-  # docker-backend:
-  #   build:
-  #     context: json-server
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - '5000:5000'
-  #   volumes:
-  #     - ./json-server:/backend
-      
-
-
-
+      - ~/.gitconfig:/etc/gitconfig
+      - ./src:/angapp/src:cached
+      - ./e2e:/angapp/e2e:cached
+      - ./tsconfig.json:/angapp/tsconfig.json
+      - ./tslint.json:/angapp/tslint.json
+      - ./package.json:/angapp/package.json
+    entrypoint: ng serve --host 0.0.0.0

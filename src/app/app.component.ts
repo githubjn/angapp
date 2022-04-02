@@ -32,9 +32,9 @@ export class AppComponent {
     });
 
     this.translateService.setDefaultLang('en');
-    this.translateService.use(localStorage.getItem('lang') || 'en' );
+    this.translateService.use( localStorage.getItem('lang') || 'en' );
 
-    const lang = localStorage.getItem('lang') ||'en';
+    const lang = localStorage.getItem('lang') || 'en';
     document.documentElement.lang = lang;
 
   }

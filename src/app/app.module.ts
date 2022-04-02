@@ -17,7 +17,8 @@ import { CountryComponent } from './country/country.component';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
+import { CountriesComponent } from './countries/countries.component'; 
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient){
     BooksComponent,
     TempoComponent,
     NavbarComponent,
-    CountryComponent
+    CountryComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule,

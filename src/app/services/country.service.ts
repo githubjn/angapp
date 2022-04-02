@@ -10,7 +10,7 @@ import { Country } from '../models/country';
 export class CountryService {
 
   //private url = 'http://localhost:5000/countries';
-  private url = 'http://localhost:5000/';
+  private url = 'http://192.168.0.29:5000/';
 
   constructor(private http: HttpClient) { }
 
