@@ -18,7 +18,8 @@ import { LanguageInterceptor } from './interceptors/language.interceptor';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { CountriesComponent } from './countries/countries.component'; 
+import { CountriesComponent } from './countries/countries.component';
+import { FooterComponent } from './footer/footer.component'; 
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
@@ -34,7 +35,8 @@ export function HttpLoaderFactory(http: HttpClient){
     TempoComponent,
     NavbarComponent,
     CountryComponent,
-    CountriesComponent
+    CountriesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
